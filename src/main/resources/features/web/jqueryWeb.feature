@@ -6,8 +6,8 @@ Feature: Test different interactions of jquery website
   @E2EJquery @Droppable
   Scenario: Test Droppable Interaction
     When User selects option "Droppable" from left menu under Interactions
-    And User Drag ‘Drag me around’ component to ‘Drop here’ component
-    Then ‘Drag me around’ component must get dragged ‘Drop here’ component
+    And User Drag "Drag me around" component to "Drop here" component
+    Then "Drag me around" component must get dragged "Drop here" component
 
   @E2EJquery @Selectable
   Scenario: Test Selectable Interaction
