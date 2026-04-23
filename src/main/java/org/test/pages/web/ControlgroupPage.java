@@ -25,6 +25,8 @@ public class ControlgroupPage extends CommonHelper {
 
 	public static final Logger log = Logger.getLogger(ControlgroupPage.class.getName());
 
+	WebDriver driver;
+
 	@FindBy(xpath = "//li/a[@href='https://jqueryui.com/demos/']")
 	WebElement verifyHomepage;
 
@@ -58,7 +60,6 @@ public class ControlgroupPage extends CommonHelper {
 	@FindBy(id = "book")
 	WebElement bookButton;
 
-	WebDriver driver;
 	public ControlgroupPage() {
 		this.driver =  DriverFactory.getDriver();
 		PageFactory.initElements(driver, this);
