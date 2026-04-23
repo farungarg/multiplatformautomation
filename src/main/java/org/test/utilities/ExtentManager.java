@@ -1,7 +1,7 @@
 package org.test.utilities;
 
 import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 
 import java.io.File;
@@ -24,8 +24,7 @@ public class ExtentManager {
 	public static ExtentReports createInstance() {
 		String fileName = getReportPath(reportFilepath);
 
-		ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter(fileName);
-		htmlReporter.config().setChartVisibilityOnOpen(false);
+		ExtentSparkReporter htmlReporter = new ExtentSparkReporter(fileName);
 		htmlReporter.config().setTheme(Theme.DARK);
 		htmlReporter.config().setDocumentTitle(reportFileName);
 		htmlReporter.config().setEncoding("utf-8");

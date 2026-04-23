@@ -1,7 +1,7 @@
 package org.test.drivers;
 
 import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.remote.MobileCapabilityType;
+import org.openqa.selenium.MutableCapabilities;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.test.utilities.PropertyHandler;
 import org.openqa.selenium.Capabilities;
@@ -9,9 +9,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
-
-import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.remote.MobileCapabilityType;
 
 import java.io.File;
 import java.io.IOException;
@@ -50,11 +47,11 @@ public class DriverFactory {
     public static void setAndroidDriver() throws IOException {
 
         File file = new File(PropertyHandler.readData("SelendroidApp"));
-        DesiredCapabilities cap = new DesiredCapabilities();
-        cap.setCapability(MobileCapabilityType.DEVICE_NAME, "device");
-        cap.setCapability(MobileCapabilityType.UDID,PropertyHandler.readData("deviceName"));
-        cap.setCapability(MobileCapabilityType.APP, file.getAbsolutePath());
-        cap.setCapability(MobileCapabilityType.AUTOMATION_NAME, "uiautomator2");
+        MutableCapabilities cap = new MutableCapabilities();
+        cap.setCapability("deviceName", "device");
+        cap.setCapability("udid", PropertyHandler.readData("deviceName"));
+        cap.setCapability("app", file.getAbsolutePath());
+        cap.setCapability("automationName", "UiAutomator2");
 
        	androidDriver = new AndroidDriver(new URL(PropertyHandler.readConfig("appiumServerURL")), cap);
        // androidDriver = new AndroidDriver(cap);

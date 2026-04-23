@@ -7,7 +7,8 @@ import io.restassured.module.jsv.JsonSchemaValidator;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import net.minidev.json.JSONArray;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 import org.junit.Assert;
 import org.test.utilities.JSONHelper;
 import org.test.utilities.PropertyHandler;
@@ -28,7 +29,7 @@ import static io.restassured.RestAssured.given;
 
 public class RegresAPIPage extends CommonHelper {
 
-    public static final Logger log = Logger.getLogger(RegresAPIPage.class.getName());
+    public static final Logger log = LogManager.getLogger(RegresAPIPage.class);
     public static Integer StatusCode;
 
     public static String responseStringBody;

@@ -8,8 +8,9 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.apache.log4j.Logger;
-import org.apache.log4j.PropertyConfigurator;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.core.config.Configurator;
 import org.test.drivers.DriverFactory;
 import org.test.pages.mobile.*;
 import org.test.stepDefinations.web.JQueryWebSteps;
@@ -18,7 +19,7 @@ import org.test.utilities.ExtentTestManager;
 
 public class SelendroidMobileSteps extends CommonHelper {
 
-    public static final Logger log = Logger.getLogger(JQueryWebSteps.class.getName());
+    public static final Logger log = LogManager.getLogger(SelendroidMobileSteps.class);
 
     Scenario scenario;
     AndroidDriver driver;
@@ -37,8 +38,8 @@ public class SelendroidMobileSteps extends CommonHelper {
     @Before
     public void before(Scenario scenario) {
         try {
-            String log4jConfPath = "log4j.properties";
-            PropertyConfigurator.configure(log4jConfPath);
+            String log4jConfPath = "log4j2.properties";
+            Configurator.initialize(null, log4jConfPath);
             this.scenario = scenario;
             DriverFactory.setAndroidDriver();
             this.driver = DriverFactory.getAndroidDriver();

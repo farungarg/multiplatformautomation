@@ -7,7 +7,8 @@ import io.cucumber.java.Scenario;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 import org.test.drivers.DriverFactory;
 import org.test.pages.api.RegresAPIPage;
 import org.test.pages.web.ControlgroupPage;
@@ -23,7 +24,7 @@ import java.util.List;
 
 public class ReqResAPISteps extends CommonHelper {
 
-    public static final Logger log = Logger.getLogger(ReqResAPISteps.class.getName());
+    public static final Logger log = LogManager.getLogger(ReqResAPISteps.class);
 
     Scenario scenario;
     RegresAPIPage regresAPIPage;

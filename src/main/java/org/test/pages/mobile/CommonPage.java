@@ -2,7 +2,8 @@ package org.test.pages.mobile;
 
 import com.aventstack.extentreports.Status;
 import io.appium.java_client.android.AndroidDriver;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 import org.test.drivers.DriverFactory;
 import org.test.utilities.CommonHelper;
 import org.test.utilities.ExtentTestManager;
@@ -28,7 +29,7 @@ import static org.testng.Assert.assertEquals;
  */
 public class CommonPage extends CommonHelper {
 
-	public static final Logger log = Logger.getLogger(CommonPage.class.getName());
+	public static final Logger log = LogManager.getLogger(CommonPage.class);
 
 	@FindBy(id = "io.selendroid.testapp:id/showToastButton")
 	public WebElement showToastButton;

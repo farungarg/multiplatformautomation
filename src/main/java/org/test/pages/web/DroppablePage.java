@@ -1,7 +1,8 @@
 package org.test.pages.web;
 
 import com.aventstack.extentreports.Status;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 import org.test.drivers.DriverFactory;
 import org.test.utilities.ExtentTestManager;
 import org.test.utilities.CommonHelper;
@@ -24,7 +25,7 @@ import java.io.IOException;
 
 public class DroppablePage extends CommonHelper {
 
-	public static final Logger log = Logger.getLogger(DroppablePage.class.getName());
+	public static final Logger log = LogManager.getLogger(DroppablePage.class);
 	//ExtentTest child;
 	WebDriver driver;
 
